@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ESstaff.registerPage"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView BackgroundColor="#284243">
+
+        <StackLayout>
+
+            <Image HeightRequest="210">
+                <Image.Source>
+
+                    <OnPlatform x:TypeArguments="ImageSource"
+                                        Android="Logo.png"/>
+
+                </Image.Source>
+            </Image>
+
+            <Grid Margin="20,0,20,0" VerticalOptions="CenterAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0">
+                    <Label Text="FirstName" FontSize="Large"/>
+                    <Entry Placeholder="Adamu" FontSize="16" Text="{Binding FirstName}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1">
+                    <Label Text="SureName" FontSize="Large"/>
+                    <Entry Placeholder="Hamza" FontSize="16"  Text="{Binding SureName}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Label Text="Admin" Grid.Column="0" Grid.Row="3" Margin="5,15,0,0"  />
+                    <CheckBox x:Name="AdminCheckbox" 
+                          IsChecked="{Binding Admin}" />
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="3">
+                    <Label Text="Staff" Grid.Column="0" Grid.Row="4"  Margin="5,15,0,0" />
+                    <CheckBox IsChecked="{Binding Worker}" />
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="4">
+                    <Label Text="Premium" Grid.Column="0" Grid.Row="5"  Margin="5,15,0,0" />
+                    <CheckBox IsChecked="{Binding Premium}"/>
+                </StackLayout>
+                
+
+                <StackLayout Grid.Row="5">
+                    <Label Text="Email Address" FontSize="Large"/>
+                    <Entry Placeholder="ah11crt@bolton.ac.uk" FontSize="16" Text="{Binding EmailAddress}"/>
+                </StackLayout>
+
+    
+            </Grid>
+
+            <StackLayout>
+                <Button Text="Save" HorizontalOptions="CenterAndExpand" TextColor="White" Clicked="OnSaveButtonClicked" BackgroundColor="#284243"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

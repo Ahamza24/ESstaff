@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ESstaff.addPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ScrollView BackgroundColor="#284243">
+
+        <StackLayout>
+
+            <Image HeightRequest="210">
+                <Image.Source>
+
+                    <OnPlatform x:TypeArguments="ImageSource"
+                                        Android="Logo.png"/>
+
+                </Image.Source>
+            </Image>
+
+
+
+            <Grid Margin="20,0,20,0" VerticalOptions="CenterAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <StackLayout Grid.Row="0">
+                    <Label Text="Brand" FontSize="Large"/>
+                    <Entry Placeholder="{Binding BrandName}" FontSize="16"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1">
+                    <Label Text="Ethical Score" FontSize="Large"/>
+                    <Entry Placeholder="{Binding EthicalScore}" FontSize="16" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Label Text="Link 1" FontSize="Large"/>
+                    <Entry Placeholder="{Binding Link1}" FontSize="16"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3">
+                    <Label Text="Link 2" FontSize="Large"/>
+                    <Entry Placeholder="{Binding Link2}" FontSize="16"/>
+                </StackLayout>
+
+            </Grid>
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="1">
+                    <Button Text="Clear" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="#284243"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Button Text="Save" HorizontalOptions="CenterAndExpand" Clicked="OnSaveButtonClicked" TextColor="White" BackgroundColor="#284243"/>
+                </StackLayout>
+
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0">
+                    <Button Text="Take picture" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="#284243"
+                            Grid.Column="0" 
+                            Grid.Row="0" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1">
+                    <Button Text="Choose existing" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="#284243"
+                    Grid.Column="0" 
+                    Grid.Row="1"/>
+                </StackLayout>
+                
+            </Grid>
+            
+            
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
